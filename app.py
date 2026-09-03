@@ -13,6 +13,11 @@ import base64
 from PIL import Image
 import io
 
+try:
+    from streamlit_mic_recorder import speech_to_text
+except ImportError:
+    speech_to_text = None
+
 if "login" not in st.session_state:
     st.session_state.login = False
 if "current_user" not in st.session_state:
@@ -744,15 +749,24 @@ else:
             )
         
         with col2:
-            if st.button("🎤", key="voice_btn", use_container_width=True,
-                        help="Use voice input"):
+            if speech_to_text is not None:
+                voice_text = speech_to_text(
+                    language="en",
+                    start_prompt="🎤",
+                    stop_prompt="⏹️",
+                    just_once=True,
+                    use_container_width=True,
+                    key="browser_voice_input"
+                )
+                if voice_text:
+                    st.session_state.voice_input = voice_text
+                    st.rerun()
+            elif st.button("🎤", key="voice_btn", use_container_width=True,
+                           help="Use voice input"):
                 with st.spinner("🎤 Listening..."):
                     try:
                         voice_text = listen()
                         if voice_text:
-                            user_input = voice_text
-                            st.success(f"🎤 Heard: {voice_text}")
-             
                             st.session_state.voice_input = voice_text
                             st.rerun()
                     except Exception as e:
