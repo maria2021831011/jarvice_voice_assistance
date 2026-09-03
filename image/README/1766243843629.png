@@ -1,0 +1,14 @@
+graph TB
+    A[User Interface] --> B[Streamlit App]
+    B --> C[Authentication]
+    C --> D[Chat Interface]
+    D --> E{Input Type}
+    E -->|Text| F[Text Processing]
+    E -->|Voice| G[Speech Recognition]
+    E -->|File| H[File Analysis]
+    F & G & H --> I[Prompt Controller]
+    I --> J[Gemini AI Engine]
+    J --> K[Response Generator]
+    K --> L[Memory Storage]
+    L --> M[UI Display]
+    M --> N[Export Options]
