@@ -7,7 +7,9 @@
 
 **An intelligent AI assistant with voice interaction, multi-chat support, and futuristic interface**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀-00d4ff?style=for-the-badge&logo=streamlit)](#)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀-00d4ff?style=for-the-badge&logo=streamlit)](https://jarvicevoiceassistance-abfzta4qpdouc2i5x8qmqg.streamlit.app/)
+
+Live app: https://jarvicevoiceassistance-abfzta4qpdouc2i5x8qmqg.streamlit.app/
 
 MY demo video--> https://drive.google.com/file/d/1ItfxC-6N6YeY8MxXn6OzVve62yUzhSZm/view?usp=drivesdk
 
